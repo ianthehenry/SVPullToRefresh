@@ -28,6 +28,7 @@ enum {
     SVPullToRefreshStateStopped = 0,
     SVPullToRefreshStateTriggered,
     SVPullToRefreshStateLoading,
+    SVPullToRefreshStateDisabled,
     SVPullToRefreshStateAll = 10
 };
 
@@ -35,7 +36,6 @@ typedef NSUInteger SVPullToRefreshState;
 
 @interface SVPullToRefreshView : UIView
 
-@property (nonatomic, strong) UIColor *arrowColor;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *subtitleLabel;
@@ -49,15 +49,9 @@ typedef NSUInteger SVPullToRefreshState;
 - (void)setSubtitle:(NSString *)subtitle forState:(SVPullToRefreshState)state;
 - (void)setCustomView:(UIView *)view forState:(SVPullToRefreshState)state;
 
+- (void)setOnline:(BOOL)online;
+
 - (void)startAnimatingAnimated:(BOOL)animated;
 - (void)stopAnimatingAnimated:(BOOL)animated;
-
-// deprecated; use setSubtitle:forState: instead
-@property (nonatomic, strong, readonly) UILabel *dateLabel DEPRECATED_ATTRIBUTE;
-@property (nonatomic, strong) NSDate *lastUpdatedDate DEPRECATED_ATTRIBUTE;
-@property (nonatomic, strong) NSDateFormatter *dateFormatter DEPRECATED_ATTRIBUTE;
-
-// deprecated; use [self.scrollView triggerPullToRefresh] instead
-- (void)triggerRefresh DEPRECATED_ATTRIBUTE;
 
 @end
