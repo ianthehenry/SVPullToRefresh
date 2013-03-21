@@ -16,7 +16,7 @@
 @interface UIScrollView (SVPullToRefresh)
 
 - (void)addPullToRefreshWithActionHandler:(void (^)(void))actionHandler;
-- (void)triggerPullToRefresh;
+- (void)triggerPullToRefreshAnimated:(BOOL)animated;
 
 @property (nonatomic, strong, readonly) SVPullToRefreshView *pullToRefreshView;
 @property (nonatomic, assign) BOOL showsPullToRefresh;
@@ -41,14 +41,16 @@ typedef NSUInteger SVPullToRefreshState;
 @property (nonatomic, strong, readonly) UILabel *subtitleLabel;
 @property (nonatomic, readwrite) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 
+@property (nonatomic, assign) BOOL pushesContentDownWhileLoading;
+
 @property (nonatomic, readonly) SVPullToRefreshState state;
 
 - (void)setTitle:(NSString *)title forState:(SVPullToRefreshState)state;
 - (void)setSubtitle:(NSString *)subtitle forState:(SVPullToRefreshState)state;
 - (void)setCustomView:(UIView *)view forState:(SVPullToRefreshState)state;
 
-- (void)startAnimating;
-- (void)stopAnimating;
+- (void)startAnimatingAnimated:(BOOL)animated;
+- (void)stopAnimatingAnimated:(BOOL)animated;
 
 // deprecated; use setSubtitle:forState: instead
 @property (nonatomic, strong, readonly) UILabel *dateLabel DEPRECATED_ATTRIBUTE;
