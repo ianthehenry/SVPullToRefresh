@@ -124,7 +124,6 @@ static char UIScrollViewPullToRefreshView;
         self.textColor = [UIColor darkGrayColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.state = SVPullToRefreshStateStopped;
-        self.pushesContentDownWhileLoading = YES;
         
         self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"Pull to refresh...",),
                        NSLocalizedString(@"Release to refresh...",),
