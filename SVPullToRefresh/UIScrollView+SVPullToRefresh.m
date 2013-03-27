@@ -214,9 +214,7 @@ static char UIScrollViewPullToRefreshView;
         CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
                                                   constrainedToSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight)
                                                       lineBreakMode:self.subtitleLabel.lineBreakMode];
-        
-        CGFloat maxLabelWidth = MAX(titleSize.width,subtitleSize.width);
-        
+                
         if(subtitleSize.height > 0){
             CGFloat totalHeight = titleSize.height + subtitleSize.height + marginY;
             CGFloat minY = (self.bounds.size.height / 2)  - (totalHeight / 2);
