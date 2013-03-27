@@ -216,7 +216,6 @@ static char UIScrollViewPullToRefreshView;
                                                       lineBreakMode:self.subtitleLabel.lineBreakMode];
         
         CGFloat maxLabelWidth = MAX(titleSize.width,subtitleSize.width);
-        CGFloat totalMaxWidth = leftViewWidth + margin + maxLabelWidth;
         
         if(subtitleSize.height > 0){
             CGFloat totalHeight = titleSize.height + subtitleSize.height + marginY;
